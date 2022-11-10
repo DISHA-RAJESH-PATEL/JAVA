@@ -1,0 +1,98 @@
+create database companydb;
+
+
+show databases;
+
+
+ use companydb;
+
+
+ create table department
+     (dno int primary key,
+     dname varchar(30) not null,
+     location varchar(15) not null);
+
+
+ create table project
+     (pno int primary key,
+     pname varchar(20) not null,
+     budget int );
+	 
+	 	
+	insert into department values(1,"development","new delhi");
+	insert into department values(2,"tester","mumbai");
+	insert into department values(3,"management","chennai");
+	insert into department values(4,"Human resouces","punjab");
+	
+	insert into project values(1,"java web",40000);
+	insert into project values(2,"java desktop",30000);
+	insert into project values(3,"php",20000);
+	insert into project values(4,"python",15000);
+	insert into project values(5,"aws",50000);
+	
+	select* from project;
+	
+	select* from department;
+	
+	select 
+	department.dname,
+	department.location,
+	project.pname,
+	project.budget  
+	from department
+	inner join project
+	on department.dno=project.pno;
+	
+	 select department.dname,project.pname
+    from department
+     LEFT JOIN project
+     ON department.dno=project.pno;
+	
+	select department.location,project.budget
+    from department
+     RIGHT JOIN project
+     ON department.dno=project.pno;
+	 
+	 select 
+	department.dname,
+	department.location,
+	project.pname 
+	from department
+	left join project
+	on department.dno=project.pno;
+	
+	
+	
+	select 
+	department.dname,
+	project.pname 
+	from department
+	right join project
+	on department.dno=project.pno;
+	
+	 
+	select *
+	from department 
+	full join project;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	 
+	 
+	
